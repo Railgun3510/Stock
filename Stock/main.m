@@ -7,23 +7,26 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "FHStockHolding.h"
+#import "FHForeignStockHolding.h"
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         // Create instances and set values of FHStockHolding
         FHStockHolding *stockA = [[FHStockHolding alloc]init];
-        [stockA setPurchaseSharePrice:2.3];
-        [stockA setCurrentSharePrice:4.5];
-        [stockA setNumberOfShares:40];
+        stockA.purchaseSharePrice = 2.3;
+        stockA.currentSharePrice = 4.5;
+        stockA.numberOfShares = 40;
+        
         FHStockHolding *stockB = [[FHStockHolding alloc]init];
-        [stockB setPurchaseSharePrice:12.19];
-        [stockB setCurrentSharePrice:10.56];
-        [stockB setNumberOfShares:90];
-        FHStockHolding *stockC = [[FHStockHolding alloc]init];
-        [stockC setPurchaseSharePrice:45.1];
-        [stockC setCurrentSharePrice:49.51];
-        [stockC setNumberOfShares:210];
+        stockB.purchaseSharePrice = 12.19;
+        stockB.currentSharePrice = 10.56;
+        stockB.numberOfShares = 90;
+        
+        FHForeignStockHolding *stockC = [[FHForeignStockHolding alloc]init];
+        stockC.purchaseSharePrice = 45.1;
+        stockC.currentSharePrice =49.51;
+        stockC.numberOfShares = 210;
+        stockC.conversionRate = 0.94;
         
         // Create empty array and add objects to it
         NSMutableArray *stockInPossession = [NSMutableArray array];
